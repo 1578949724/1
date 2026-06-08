@@ -2735,10 +2735,10 @@ print(result.isnull().sum())`,
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-slate-900 text-white pt-24 pb-12 px-4">
+      <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-4">项目不存在</h1>
-          <Link to="/pandas" className="text-blue-400 hover:text-blue-300">返回项目列表</Link>
+          <Link to="/pandas" className="text-gray-800 hover:text-black">返回项目列表</Link>
         </div>
       </div>
     );
