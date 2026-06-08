@@ -2818,23 +2818,23 @@ print(result.isnull().sum())`,
   let globalSectionIndex = 0;
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
       <div className="max-w-[1800px] mx-auto">
         {/* Header */}
         <Link 
           to="/pandas" 
-          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-gray-800 hover:text-black mb-6 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
           返回项目列表
         </Link>
 
-        <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 mb-6">
+        <div className="bg-white rounded-xl p-6 border border-gray-300 mb-6">
           <div className="flex items-start justify-between mb-4">
             <div>
               <h1 className="text-3xl font-bold mb-2">{project.title}</h1>
-              <div className="flex items-center gap-3 text-slate-400">
-                <span className="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-sm">
+              <div className="flex items-center gap-3 text-gray-600">
+                <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm border border-gray-300">
                   {project.difficulty}
                 </span>
                 <span>⏱ {project.duration}</span>
@@ -2848,7 +2848,7 @@ print(result.isnull().sum())`,
           {sectionsCollapsed && (
             <button
               onClick={() => setSectionsCollapsed(false)}
-              className="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 bg-blue-600 hover:bg-blue-700 text-white px-2 py-8 rounded-r-lg shadow-lg transition-all"
+              className="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 bg-black hover:bg-gray-800 text-white px-2 py-8 rounded-r-lg shadow-lg transition-all"
               style={{ top: '50%' }}
             >
               <PanelLeftOpen className="w-5 h-5" />
@@ -2857,7 +2857,7 @@ print(result.isnull().sum())`,
 
           {/* Left - Collapsible Sections */}
           <div className={`${sectionsCollapsed ? 'w-0 overflow-hidden' : 'w-80'} transition-all duration-300 flex-shrink-0`}>
-            <div className="bg-slate-800 rounded-xl p-5 border border-slate-700 sticky top-24 max-h-[calc(100vh-12rem)] overflow-y-auto">
+            <div className="bg-white rounded-xl p-5 border border-gray-300 sticky top-24 max-h-[calc(100vh-12rem)] overflow-y-auto">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-bold flex items-center gap-2">
                   <BookOpen className="w-5 h-5" />
@@ -2865,10 +2865,10 @@ print(result.isnull().sum())`,
                 </h2>
                 <button
                   onClick={() => setSectionsCollapsed(true)}
-                  className="p-1 hover:bg-slate-700 rounded transition-colors"
+                  className="p-1 hover:bg-gray-200 rounded transition-colors"
                   title="收起目录"
                 >
-                  <PanelLeftClose className="w-4 h-4 text-slate-400" />
+                  <PanelLeftClose className="w-4 h-4 text-gray-600" />
                 </button>
               </div>
               
@@ -2877,13 +2877,13 @@ print(result.isnull().sum())`,
                   <div key={groupIdx}>
                     <button
                       onClick={() => toggleGroup(group.title)}
-                      className="w-full flex items-center justify-between p-2 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition-colors text-left"
+                      className="w-full flex items-center justify-between p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-left"
                     >
-                      <span className="text-sm font-semibold text-slate-200">{group.title}</span>
+                      <span className="text-sm font-semibold text-gray-800">{group.title}</span>
                       {expandedGroups[group.title] ? (
-                        <ChevronDown className="w-4 h-4 text-slate-400" />
+                        <ChevronDown className="w-4 h-4 text-gray-600" />
                       ) : (
-                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                        <ChevronRight className="w-4 h-4 text-gray-600" />
                       )}
                     </button>
                     
@@ -2897,8 +2897,8 @@ print(result.isnull().sum())`,
                               onClick={() => setActiveSection(sectionIndex)}
                               className={`w-full text-left p-2 rounded-lg transition-all ${
                                 activeSection === sectionIndex
-                                  ? 'bg-blue-600 text-white'
-                                  : 'bg-slate-700/30 text-slate-300 hover:bg-slate-700/50'
+                                  ? 'bg-black text-white'
+                                  : 'bg-gray-50 text-gray-800 hover:bg-gray-200'
                               }`}
                             >
                               <div className="flex items-start gap-2">
@@ -2917,15 +2917,15 @@ print(result.isnull().sum())`,
               </div>
 
               {/* Practice */}
-              <div className="mt-6 pt-4 border-t border-slate-700">
+              <div className="mt-6 pt-4 border-t border-gray-300">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
                   <FileText className="w-4 h-4" />
                   {project.practiceTitle}
                 </h3>
-                <p className="text-slate-400 text-sm mb-3">{project.practiceDesc}</p>
+                <p className="text-gray-600 text-sm mb-3">{project.practiceDesc}</p>
                 <Link
                   to={`/practice/${id}/0`}
-                  className="block w-full py-2 px-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-medium transition-colors text-center"
+                  className="block w-full py-2 px-4 bg-black hover:bg-gray-800 text-white rounded-lg text-sm font-medium transition-colors text-center"
                 >
                   开始练习
                 </Link>
@@ -2936,28 +2936,28 @@ print(result.isnull().sum())`,
           {/* Middle - Learning Content */}
           <div className="flex-1 min-w-0">
             {currentSection && (
-              <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+              <div className="bg-white rounded-xl p-6 border border-gray-300">
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <Book className="w-6 h-6 text-blue-400" />
+                  <Book className="w-6 h-6 text-gray-800" />
                   {currentSection.title}
                 </h2>
                 
                 {/* Main Content */}
-                <div className="bg-slate-700/50 border border-blue-500/30 rounded-lg p-4 mb-4">
-                  <p className="text-slate-200 leading-relaxed">{currentSection.content}</p>
+                <div className="bg-gray-50 border border-gray-300 rounded-lg p-4 mb-4">
+                  <p className="text-gray-800 leading-relaxed">{currentSection.content}</p>
                 </div>
 
                 {/* Tips */}
                 {currentSection.tips && currentSection.tips.length > 0 && (
-                  <div className="bg-blue-600/20 border border-blue-500/30 rounded-lg p-4 mb-4">
-                    <h4 className="font-semibold text-blue-300 mb-2 flex items-center gap-2">
+                  <div className="bg-gray-50 border border-gray-300 rounded-lg p-4 mb-4">
+                    <h4 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
                       <CheckCircle className="w-4 h-4" />
                       学习提示
                     </h4>
                     <ul className="space-y-1">
                       {currentSection.tips.map((tip: string, i: number) => (
-                        <li key={i} className="text-blue-200 text-sm flex items-start gap-2">
-                          <span className="text-blue-400 mt-1">•</span>
+                        <li key={i} className="text-gray-700 text-sm flex items-start gap-2">
+                          <span className="text-gray-800 mt-1">•</span>
                           {tip}
                         </li>
                       ))}
@@ -2967,15 +2967,15 @@ print(result.isnull().sum())`,
 
                 {/* Warnings */}
                 {currentSection.warnings && currentSection.warnings.length > 0 && (
-                  <div className="bg-red-600/20 border border-red-500/30 rounded-lg p-4 mb-4">
-                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
+                  <div className="bg-gray-50 border border-gray-300 rounded-lg p-4 mb-4">
+                    <h4 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
                       <AlertCircle className="w-4 h-4" />
                       注意事项
                     </h4>
                     <ul className="space-y-1">
                       {currentSection.warnings.map((warning: string, i: number) => (
-                        <li key={i} className="text-red-200 text-sm flex items-start gap-2">
-                          <span className="text-red-400 mt-1">•</span>
+                        <li key={i} className="text-gray-700 text-sm flex items-start gap-2">
+                          <span className="text-gray-800 mt-1">•</span>
                           {warning}
                         </li>
                       ))}
@@ -2987,7 +2987,7 @@ print(result.isnull().sum())`,
                 {currentSection.exampleCode && (
                   <div className="mb-4">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-slate-300 flex items-center gap-2">
+                      <h4 className="font-semibold text-gray-800 flex items-center gap-2">
                         <Code className="w-4 h-4" />
                         示例代码
                       </h4>
@@ -2996,21 +2996,21 @@ print(result.isnull().sum())`,
                           onClick={() => {
                             navigator.clipboard.writeText(currentSection.exampleCode);
                           }}
-                          className="px-3 py-1 bg-slate-700 hover:bg-slate-600 rounded text-xs flex items-center gap-1 transition-colors"
+                          className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded text-xs flex items-center gap-1 transition-colors"
                         >
                           <Copy className="w-3 h-3" />
                           复制
                         </button>
                         <button
                           onClick={handleUseExampleCode}
-                          className="px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded text-xs flex items-center gap-1 transition-colors"
+                          className="px-3 py-1 bg-black hover:bg-gray-800 rounded text-xs flex items-center gap-1 transition-colors text-white"
                         >
                           使用
                         </button>
                       </div>
                     </div>
-                    <div className="bg-slate-900 rounded-lg p-4 overflow-y-auto" style={{ maxHeight: '300px' }}>
-                      <pre className="text-sm font-mono text-green-400">
+                    <div className="bg-gray-100 rounded-lg p-4 overflow-y-auto" style={{ maxHeight: '300px' }}>
+                      <pre className="text-sm font-mono text-gray-900">
                         <code>{currentSection.exampleCode}</code>
                       </pre>
                     </div>
@@ -3022,24 +3022,24 @@ print(result.isnull().sum())`,
 
           {/* Right - Code Editor */}
           <div className="flex-1 min-w-0">
-            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 sticky top-24">
+            <div className="bg-white rounded-xl p-6 border border-gray-300 sticky top-24">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-gray-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-gray-600"></div>
                   </div>
-                  <span className="text-slate-400 text-sm ml-2">📄 Python - 可编辑</span>
+                  <span className="text-gray-600 text-sm ml-2">📄 Python - 可编辑</span>
                 </div>
-                <span className="text-slate-500 text-xs">📏 20px</span>
+                <span className="text-gray-500 text-xs">📏 20px</span>
               </div>
 
-              <div className="bg-slate-900 rounded-lg min-h-[250px] relative">
+              <div className="bg-gray-100 rounded-lg min-h-[250px] relative">
                 <textarea
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
-                  className="w-full h-[250px] bg-transparent text-green-400 font-mono text-sm p-4 resize-none focus:outline-none"
+                  className="w-full h-[250px] bg-transparent text-gray-900 font-mono text-sm p-4 resize-none focus:outline-none"
                   spellCheck={false}
                   placeholder="# 在此编写你的代码..."
                 />
@@ -3049,21 +3049,21 @@ print(result.isnull().sum())`,
                 <div className="flex gap-2 flex-wrap">
                   <button
                     onClick={handleCopyMainCode}
-                    className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 rounded text-xs flex items-center gap-1 transition-colors"
+                    className="px-3 py-1.5 bg-gray-200 hover:bg-gray-300 rounded text-xs flex items-center gap-1 transition-colors"
                   >
                     <Copy className="w-3 h-3" />
                     复制
                   </button>
                   <button
                     onClick={handleClearCode}
-                    className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 rounded text-xs flex items-center gap-1 transition-colors"
+                    className="px-3 py-1.5 bg-gray-200 hover:bg-gray-300 rounded text-xs flex items-center gap-1 transition-colors"
                   >
                     <Trash2 className="w-3 h-3" />
                     清空
                   </button>
                   <button
                     onClick={handleResetCode}
-                    className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 rounded text-xs flex items-center gap-1 transition-colors"
+                    className="px-3 py-1.5 bg-gray-200 hover:bg-gray-300 rounded text-xs flex items-center gap-1 transition-colors"
                   >
                     重置
                   </button>
@@ -3071,8 +3071,8 @@ print(result.isnull().sum())`,
                     onClick={handleShowAnswer}
                     className={`px-3 py-1.5 rounded text-xs flex items-center gap-1 transition-colors ${
                       showAnswer 
-                        ? 'bg-green-600/20 text-green-300 border border-green-500/30' 
-                        : 'bg-yellow-600/20 text-yellow-300 border border-yellow-500/30'
+                        ? 'bg-gray-500 text-white border border-gray-400' 
+                        : 'bg-gray-200 text-gray-800 border border-gray-300'
                     }`}
                   >
                     {showAnswer ? '收起答案' : '答案'}
@@ -3082,12 +3082,12 @@ print(result.isnull().sum())`,
                   <button
                     onClick={handleRunCode}
                     disabled={isRunning}
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 rounded-lg text-sm flex items-center gap-2 transition-colors"
+                    className="px-4 py-2 bg-black hover:bg-gray-800 disabled:opacity-50 rounded-lg text-sm flex items-center gap-2 transition-colors text-white"
                   >
                     <Play className="w-4 h-4" />
                     {isRunning ? '运行中...' : '运行'}
                   </button>
-                  <button className="px-4 py-2 bg-green-600/20 hover:bg-green-600/30 text-green-300 border border-green-500/30 rounded-lg text-sm flex items-center gap-2 transition-colors">
+                  <button className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 border border-gray-300 rounded-lg text-sm flex items-center gap-2 transition-colors">
                     <FileText className="w-4 h-4" />
                     测试
                   </button>
@@ -3098,7 +3098,7 @@ print(result.isnull().sum())`,
               {showAnswer && currentSectionAnswer && (
                 <div className="mt-4">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-yellow-300 flex items-center gap-2">
+                    <h4 className="text-sm font-semibold text-gray-800 flex items-center gap-2">
                       <Code className="w-4 h-4" />
                       参考答案（章节 {activeSection + 1}）
                     </h4>
@@ -3106,14 +3106,14 @@ print(result.isnull().sum())`,
                       onClick={() => {
                         navigator.clipboard.writeText(currentSectionAnswer);
                       }}
-                      className="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-xs flex items-center gap-1 transition-colors"
+                      className="px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded text-xs flex items-center gap-1 transition-colors"
                     >
                       <Copy className="w-3 h-3" />
                       复制
                     </button>
                   </div>
-                  <div className="bg-slate-900 rounded-lg p-4 overflow-y-auto" style={{ maxHeight: '200px' }}>
-                    <pre className="text-sm font-mono text-yellow-300">
+                  <div className="bg-gray-100 rounded-lg p-4 overflow-y-auto" style={{ maxHeight: '200px' }}>
+                    <pre className="text-sm font-mono text-gray-900">
                       <code>{currentSectionAnswer}</code>
                     </pre>
                   </div>
@@ -3124,13 +3124,13 @@ print(result.isnull().sum())`,
               {output.length > 0 && (
                 <div className="mt-4">
                   <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                    <span className="text-green-400">▶</span>
+                    <span className="text-gray-800">▶</span>
                     运行结果
                   </h4>
-                  <div className="bg-slate-900 rounded-lg p-4 overflow-y-auto" style={{ maxHeight: '200px' }}>
+                  <div className="bg-gray-100 rounded-lg p-4 overflow-y-auto" style={{ maxHeight: '200px' }}>
                     <pre className="text-sm font-mono">
                       {output.map((line, idx) => (
-                        <div key={idx} className={line.startsWith('===') ? 'text-blue-400 mt-2' : 'text-slate-300'}>
+                        <div key={idx} className={line.startsWith('===') ? 'text-gray-800 mt-2 font-bold' : 'text-gray-700'}>
                           {line || '\u00A0'}
                         </div>
                       ))}

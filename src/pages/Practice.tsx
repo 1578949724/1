@@ -1906,40 +1906,40 @@ export default function Practice() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <Link 
             to={`/project/${projectId}`}
-            className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+            className="inline-flex items-center gap-2 text-gray-800 hover:text-black transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
             返回学习
           </Link>
           
-          <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${timeLeft < 300 ? 'bg-red-600' : 'bg-slate-800'} border border-slate-700`}>
+          <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${timeLeft < 300 ? 'bg-gray-300' : 'bg-gray-100'} border border-gray-300`}>
             <Clock className="w-5 h-5" />
             <span className="font-mono text-lg">{formatTime(timeLeft)}</span>
           </div>
         </div>
 
-        <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 mb-6">
+        <div className="bg-white rounded-xl p-6 border border-gray-300 mb-6">
           <h1 className="text-3xl font-bold">{data.title}</h1>
-          <p className="text-slate-400 mt-2">总分：{data.quizQuestions.length}道选择题 + {data.judgmentQuestions.length}道判断题 + {data.codingChallenges.length}道综合实战题</p>
+          <p className="text-gray-600 mt-2">总分：{data.quizQuestions.length}道选择题 + {data.judgmentQuestions.length}道判断题 + {data.codingChallenges.length}道综合实战题</p>
         </div>
 
         {!showResults ? (
           <div className="space-y-6">
             {/* Quiz Questions */}
-            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+            <div className="bg-white rounded-xl p-6 border border-gray-300">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <CheckCircle className="w-6 h-6 text-blue-400" />
+                <CheckCircle className="w-6 h-6 text-gray-800" />
                 选择题 ({data.quizQuestions.length}题)
               </h2>
               
               <div className="space-y-6">
                 {data.quizQuestions.map((q, idx) => (
-                  <div key={q.id} className="bg-slate-700/50 rounded-lg p-5">
+                  <div key={q.id} className="bg-gray-50 rounded-lg p-5">
                     <h3 className="text-lg font-semibold mb-4">
                       {idx + 1}. {q.question}
                     </h3>
@@ -1950,8 +1950,8 @@ export default function Practice() {
                           onClick={() => handleSelectAnswer(q.id, optIdx)}
                           className={`w-full text-left p-4 rounded-lg transition-all ${
                             selectedAnswers[q.id] === optIdx
-                              ? 'bg-blue-600 text-white'
-                              : 'bg-slate-700/50 text-slate-200 hover:bg-slate-700'
+                              ? 'bg-black text-white'
+                              : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                           }`}
                         >
                           {String.fromCharCode(65 + optIdx)}. {option}
@@ -1964,15 +1964,15 @@ export default function Practice() {
             </div>
 
             {/* Judgment Questions */}
-            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+            <div className="bg-white rounded-xl p-6 border border-gray-300">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Circle className="w-6 h-6 text-yellow-400" />
+                <Circle className="w-6 h-6 text-gray-800" />
                 判断题 ({data.judgmentQuestions.length}题)
               </h2>
               
               <div className="space-y-6">
                 {data.judgmentQuestions.map((q, idx) => (
-                  <div key={q.id} className="bg-slate-700/50 rounded-lg p-5">
+                  <div key={q.id} className="bg-gray-50 rounded-lg p-5">
                     <h3 className="text-lg font-semibold mb-4">
                       {idx + 1}. {q.question}
                     </h3>
@@ -1981,8 +1981,8 @@ export default function Practice() {
                         onClick={() => handleJudgmentAnswer(q.id, true)}
                         className={`flex-1 p-4 rounded-lg transition-all flex items-center justify-center gap-2 ${
                           judgmentAnswers[q.id] === true
-                            ? 'bg-green-600 text-white'
-                            : 'bg-slate-700/50 text-slate-200 hover:bg-slate-700'
+                            ? 'bg-black text-white'
+                            : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                         }`}
                       >
                         <Check className="w-5 h-5" />
@@ -1992,8 +1992,8 @@ export default function Practice() {
                         onClick={() => handleJudgmentAnswer(q.id, false)}
                         className={`flex-1 p-4 rounded-lg transition-all flex items-center justify-center gap-2 ${
                           judgmentAnswers[q.id] === false
-                            ? 'bg-red-600 text-white'
-                            : 'bg-slate-700/50 text-slate-200 hover:bg-slate-700'
+                            ? 'bg-black text-white'
+                            : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                         }`}
                       >
                         <XCircle className="w-5 h-5" />
@@ -2006,9 +2006,9 @@ export default function Practice() {
             </div>
 
             {/* Coding Challenges */}
-            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+            <div className="bg-white rounded-xl p-6 border border-gray-300">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <FileText className="w-6 h-6 text-purple-400" />
+                <FileText className="w-6 h-6 text-gray-800" />
                 综合实战题 ({data.codingChallenges.length}题)
               </h2>
               
@@ -2020,7 +2020,7 @@ export default function Practice() {
                   const isRunning = idx === 0 ? isRunning1 : isRunning2;
                   
                   return (
-                    <div key={challenge.id} className="bg-slate-700/30 rounded-lg p-5">
+                    <div key={challenge.id} className="bg-gray-50 rounded-lg p-5">
                       <h3 className="text-lg font-semibold mb-4">
                         综合实战题{idx + 1}：{challenge.description}
                       </h3>
@@ -2028,16 +2028,16 @@ export default function Practice() {
                       <div className="mb-3">
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex gap-1">
-                            <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                            <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
+                            <div className="w-2 h-2 rounded-full bg-gray-600"></div>
                           </div>
                         </div>
-                        <div className="bg-slate-900 rounded-lg overflow-hidden">
+                        <div className="bg-gray-100 rounded-lg overflow-hidden">
                           <textarea
                             value={code}
                             onChange={(e) => setCode(e.target.value)}
-                            className="w-full h-48 bg-transparent text-green-400 font-mono text-sm p-4 resize-none focus:outline-none"
+                            className="w-full h-48 bg-transparent text-gray-900 font-mono text-sm p-4 resize-none focus:outline-none"
                             spellCheck={false}
                             placeholder="# 请在此处编写你的代码..."
                           />
@@ -2048,14 +2048,14 @@ export default function Practice() {
                         <button
                           onClick={() => handleRunCode(idx + 1)}
                           disabled={isRunning}
-                          className="py-2 px-4 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 rounded-lg text-sm flex items-center gap-2 transition-colors"
+                          className="py-2 px-4 bg-black hover:bg-gray-800 disabled:opacity-50 rounded-lg text-sm flex items-center gap-2 transition-colors text-white"
                         >
                           <Play className="w-4 h-4" />
                           {isRunning ? '运行中...' : '运行'}
                         </button>
                         <button
                           onClick={() => setCode(challenge.initialCode)}
-                          className="py-2 px-4 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm flex items-center gap-2 transition-colors"
+                          className="py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm flex items-center gap-2 transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                           重置
@@ -2064,9 +2064,9 @@ export default function Practice() {
                       
                       {output.length > 0 && (
                         <div className="mb-4">
-                          <div className="text-xs text-slate-400 mb-1">输出：</div>
-                          <div className="bg-slate-900 rounded-lg p-3">
-                            <pre className="text-sm font-mono text-slate-300">
+                          <div className="text-xs text-gray-600 mb-1">输出：</div>
+                          <div className="bg-gray-100 rounded-lg p-3">
+                            <pre className="text-sm font-mono text-gray-800">
                               {output.map((line, idx) => (
                                 <div key={idx}>{line}</div>
                               ))}
@@ -2083,7 +2083,7 @@ export default function Practice() {
             <div className="flex justify-center">
               <button
                 onClick={handleSubmit}
-                className="py-4 px-12 bg-green-600 hover:bg-green-700 rounded-lg text-xl font-medium transition-colors"
+                className="py-4 px-12 bg-black hover:bg-gray-800 rounded-lg text-xl font-medium transition-colors text-white"
               >
                 提交练习
               </button>
@@ -2091,22 +2091,22 @@ export default function Practice() {
           </div>
         ) : (
           <div className="space-y-6">
-            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+            <div className="bg-white rounded-xl p-6 border border-gray-300">
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-2">练习完成！</h2>
-                <div className="text-6xl font-bold text-blue-400 mb-4">{getTotalScore()}分</div>
+                <div className="text-6xl font-bold text-black mb-4">{getTotalScore()}分</div>
                 <div className="flex justify-center gap-8">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400">{quizScore}分</div>
-                    <div className="text-slate-400">选择题</div>
+                    <div className="text-3xl font-bold text-black">{quizScore}分</div>
+                    <div className="text-gray-600">选择题</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-400">{judgmentScore}分</div>
-                    <div className="text-slate-400">判断题</div>
+                    <div className="text-3xl font-bold text-black">{judgmentScore}分</div>
+                    <div className="text-gray-600">判断题</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-400">{codingScore}分</div>
-                    <div className="text-slate-400">综合实战题</div>
+                    <div className="text-3xl font-bold text-black">{codingScore}分</div>
+                    <div className="text-gray-600">综合实战题</div>
                   </div>
                 </div>
               </div>
@@ -2115,13 +2115,13 @@ export default function Practice() {
             <div className="flex justify-center gap-4">
               <Link
                 to={`/practice/${projectId}/${sectionId}`}
-                className="py-3 px-8 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors"
+                className="py-3 px-8 bg-gray-200 hover:bg-gray-300 rounded-lg font-medium transition-colors"
               >
                 重新练习
               </Link>
               <Link
                 to={`/project/${projectId}`}
-                className="py-3 px-8 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
+                className="py-3 px-8 bg-black hover:bg-gray-800 rounded-lg font-medium transition-colors text-white"
               >
                 返回学习
               </Link>

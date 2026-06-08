@@ -48,13 +48,13 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">我的课程</h1>
-          <p className="text-slate-400 text-lg mb-2">广东科学技术职业学院 · 商学院</p>
-          <p className="text-blue-400">商务数据分析与应用专业</p>
+          <p className="text-gray-600 text-lg mb-2">广东科学技术职业学院 · 商学院</p>
+          <p className="text-gray-800">商务数据分析与应用专业</p>
         </div>
         
         {/* Course List */}
@@ -62,21 +62,21 @@ export default function About() {
           {courses.map((course, idx) => {
             const Icon = course.icon;
             return (
-              <div key={idx} className="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 group">
+              <div key={idx} className="bg-white rounded-xl p-6 border border-gray-300 hover:border-black transition-all hover:shadow-lg group">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-4xl">{course.emoji}</div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-black transition-colors">
                       {course.title}
                     </h3>
-                    <p className="text-slate-400 text-sm">{course.description}</p>
+                    <p className="text-gray-600 text-sm">{course.description}</p>
                   </div>
                 </div>
                 <Link 
                   to={`/course/${course.path}`}
-                  className="w-full py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm transition-colors flex items-center justify-center gap-2 text-slate-300 hover:text-white"
+                  className="w-full py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors flex items-center justify-center gap-2 text-gray-800 hover:text-black"
                 >
-                  开始学习 <span className="text-blue-400">→</span>
+                  开始学习 <span className="text-black">→</span>
                 </Link>
               </div>
             );

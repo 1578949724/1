@@ -1686,21 +1686,21 @@ print("- 产品销售占比饼图")`
 
   if (!course) {
     return (
-      <div className="min-h-screen bg-slate-900 text-white pt-24 pb-12 px-4">
+      <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-4">课程不存在</h1>
-          <Link to="/about" className="text-blue-400 hover:text-blue-300">返回课程列表</Link>
+          <Link to="/about" className="text-gray-800 hover:text-black">返回课程列表</Link>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
       <div className="max-w-5xl mx-auto">
         <Link 
           to="/about" 
-          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-gray-800 hover:text-black mb-8 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
           返回课程列表
@@ -1711,46 +1711,46 @@ print("- 产品销售占比饼图")`
             <span className="text-6xl">{course.emoji}</span>
             <div>
               <h1 className="text-4xl font-bold">{course.title}</h1>
-              <p className="text-slate-400 text-lg mt-2">{course.description}</p>
-              <p className="text-blue-400 text-sm mt-1">总课时: {course.totalHours}小时</p>
+              <p className="text-gray-600 text-lg mt-2">{course.description}</p>
+              <p className="text-gray-800 text-sm mt-1">总课时: {course.totalHours}小时</p>
             </div>
           </div>
         </div>
         
         <div className="space-y-8">
           {course.chapters.map((chapter, idx) => (
-            <div key={idx} className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+            <div key={idx} className="bg-white rounded-xl p-6 border border-gray-300">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white font-bold">
                   {idx + 1}
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold">{chapter.title}</h2>
-                  <p className="text-slate-400 text-sm">{chapter.hours}课时</p>
+                  <p className="text-gray-600 text-sm">{chapter.hours}课时</p>
                 </div>
               </div>
               
               <div className="space-y-6">
                 {chapter.content.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-lg p-5">
+                  <div key={i} className="bg-gray-50 rounded-lg p-5">
                     <div className="flex items-center gap-2 mb-4">
                       {item.type === 'practice' ? (
-                        <PlayCircle className="w-5 h-5 text-green-400" />
+                        <PlayCircle className="w-5 h-5 text-gray-800" />
                       ) : (
-                        <BookOpen className="w-5 h-5 text-blue-400" />
+                        <BookOpen className="w-5 h-5 text-gray-800" />
                       )}
-                      <h3 className="text-lg font-semibold text-blue-400">{item.subtitle}</h3>
+                      <h3 className="text-lg font-semibold text-gray-800">{item.subtitle}</h3>
                     </div>
                     
                     <div className="mb-4">
-                      <h4 className="text-sm text-slate-400 mb-2 flex items-center gap-2">
+                      <h4 className="text-sm text-gray-600 mb-2 flex items-center gap-2">
                         <CheckCircle className="w-4 h-4" />
                         学习步骤
                       </h4>
                       <ul className="space-y-1">
                         {item.steps.map((step, si) => (
-                          <li key={si} className="text-slate-300 text-sm flex items-start gap-2">
-                            <span className="text-blue-400 mt-1">•</span>
+                          <li key={si} className="text-gray-700 text-sm flex items-start gap-2">
+                            <span className="text-gray-800 mt-1">•</span>
                             {step}
                           </li>
                         ))}
@@ -1758,12 +1758,12 @@ print("- 产品销售占比饼图")`
                     </div>
                     
                     <div>
-                      <h4 className="text-sm text-slate-400 mb-2 flex items-center gap-2">
+                      <h4 className="text-sm text-gray-600 mb-2 flex items-center gap-2">
                         <Terminal className="w-4 h-4" />
                         代码示例
                       </h4>
-                      <pre className="bg-slate-950 rounded-lg p-4 overflow-x-auto text-sm">
-                        <code className="text-green-400">{item.code}</code>
+                      <pre className="bg-gray-100 rounded-lg p-4 overflow-x-auto text-sm">
+                        <code className="text-gray-900">{item.code}</code>
                       </pre>
                     </div>
                   </div>
