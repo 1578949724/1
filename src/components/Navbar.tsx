@@ -11,14 +11,14 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0f0f23]/95 backdrop-blur-md border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
             <div className="w-9 h-9 bg-black rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-lg">Z</span>
             </div>
-            <span className="text-black font-bold text-lg">数据分析学习</span>
+            <span className="text-white font-bold text-lg">数据分析学习</span>
           </Link>
           
           <div className="flex items-center space-x-2">
@@ -30,8 +30,8 @@ export default function Navbar() {
                   to={item.path}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? 'bg-black text-white'
-                      : 'text-gray-600 hover:text-black hover:bg-gray-100'
+                      ? 'bg-white text-black'
+                      : 'text-gray-400 hover:text-white hover:bg-gray-800'
                   }`}
                 >
                   {item.label}

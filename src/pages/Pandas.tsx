@@ -127,9 +127,9 @@ export default function Pandas() {
 
   const getDifficultyColor = (color: string) => {
     const colors = {
-      green: 'bg-gray-100 text-gray-800 border-gray-300',
-      yellow: 'bg-gray-100 text-gray-800 border-gray-300',
-      red: 'bg-gray-100 text-gray-800 border-gray-300',
+      green: 'bg-green-900/30 text-green-400 border-green-800',
+      yellow: 'bg-yellow-900/30 text-yellow-400 border-yellow-800',
+      red: 'bg-red-900/30 text-red-400 border-red-800',
     };
     return colors[color as keyof typeof colors] || colors.green;
   };
@@ -144,14 +144,14 @@ export default function Pandas() {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-[#0f0f23] text-white pt-24 pb-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 text-black">
+          <h1 className="text-5xl font-bold mb-4 text-white">
             项目广场
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             选择你的学习路径，从入门到高级，逐步提升 Pandas 技能
           </p>
         </div>
@@ -169,8 +169,8 @@ export default function Pandas() {
                 }
               }}
               className={activeCategory === cat.id
-                ? 'px-5 py-2 rounded-full text-sm font-medium transition-all bg-black text-white cursor-pointer' 
-                : 'px-5 py-2 rounded-full text-sm font-medium transition-all bg-gray-100 text-gray-800 hover:bg-gray-200 cursor-pointer'}>
+                ? 'px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-black cursor-pointer' 
+                : 'px-5 py-2 rounded-full text-sm font-medium transition-all bg-gray-800 text-gray-300 hover:bg-gray-700 cursor-pointer'}>
               {cat.label} {cat.count}
             </button>
           ))}
@@ -178,7 +178,7 @@ export default function Pandas() {
 
         {/* Project Count */}
         <div className="mb-8 text-center">
-          <span className="text-gray-600">共 <span className="text-black font-bold">{filteredProjects.length}</span> 个项目</span>
+          <span className="text-gray-400">共 <span className="text-white font-bold">{filteredProjects.length}</span> 个项目</span>
         </div>
 
         {/* Projects Grid */}
@@ -188,15 +188,15 @@ export default function Pandas() {
             const colorClass = getDifficultyColor(project.color);
             
             return (
-              <div key={project.id} className="bg-white rounded-xl p-6 border border-gray-300 hover:border-black transition-all hover:shadow-lg group">
+              <div key={project.id} className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-gray-600 transition-all hover:shadow-lg group">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-white" />
+                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-black" />
                     </div>
                     <div>
                       <span className="text-gray-500 text-xs">#{project.id} {project.difficulty}</span>
-                      <h3 className="text-xl font-bold text-black mb-1">{project.title}</h3>
+                      <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
                     </div>
                   </div>
                   <span className={"px-3 py-1 rounded-full text-xs border flex items-center gap-1 " + colorClass}>
@@ -204,13 +204,13 @@ export default function Pandas() {
                   </span>
                 </div>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIdx) => (
-                    <span key={tagIdx} className="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">
+                    <span key={tagIdx} className="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">
                       {tag}
                     </span>
                   ))}
@@ -218,7 +218,7 @@ export default function Pandas() {
 
                 <Link 
                   to={`/project/${project.id}`}
-                  className="w-full py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors flex items-center justify-center gap-2 group-hover:bg-black group-hover:text-white">
+                  className="w-full py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-black">
                   开始学习 <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>

@@ -1,0 +1,25 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/*.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.map
+  Content-Type: application/json; charset=utf-8
+
+/*.svg
+  Content-Type: image/svg+xml
+
+/favicon.svg
+  Content-Type: image/svg+xml
+
+/index.html
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: no-cache

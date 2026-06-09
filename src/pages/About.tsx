@@ -48,13 +48,13 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-[#0f0f23] text-white pt-24 pb-12 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">我的课程</h1>
-          <p className="text-gray-600 text-lg mb-2">广东科学技术职业学院 · 商学院</p>
-          <p className="text-gray-800">商务数据分析与应用专业</p>
+          <p className="text-gray-400 text-lg mb-2">广东科学技术职业学院 · 商学院</p>
+        <p className="text-gray-300">商务数据分析与应用专业</p>
         </div>
         
         {/* Course List */}
@@ -62,21 +62,21 @@ export default function About() {
           {courses.map((course, idx) => {
             const Icon = course.icon;
             return (
-              <div key={idx} className="bg-white rounded-xl p-6 border border-gray-300 hover:border-black transition-all hover:shadow-lg group">
+              <div key={idx} className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-gray-600 transition-all hover:shadow-lg group">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-4xl">{course.emoji}</div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-black transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-white transition-colors">
                       {course.title}
                     </h3>
-                    <p className="text-gray-600 text-sm">{course.description}</p>
+                    <p className="text-gray-400 text-sm">{course.description}</p>
                   </div>
                 </div>
                 <Link 
                   to={`/course/${course.path}`}
-                  className="w-full py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors flex items-center justify-center gap-2 text-gray-800 hover:text-black"
+                  className="w-full py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors flex items-center justify-center gap-2 text-gray-300 hover:text-white"
                 >
-                  开始学习 <span className="text-black">→</span>
+                  开始学习 <span className="text-white">→</span>
                 </Link>
               </div>
             );
