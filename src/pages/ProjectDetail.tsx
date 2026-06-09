@@ -1072,7 +1072,7 @@ export default function ProjectDetail() {
                       </div>
                     </div>
                     <div className="bg-slate-900 rounded-lg p-4 overflow-y-auto" style={{ maxHeight: '300px' }}>
-                      <pre className="text-sm font-mono text-green-400">
+                      <pre className="text-sm font-mono text-amber-200">
                         <code>{currentSection.exampleCode}</code>
                       </pre>
                     </div>
@@ -1100,7 +1100,7 @@ export default function ProjectDetail() {
                 <textarea
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
-                  className="w-full h-[250px] bg-transparent text-green-400 font-mono text-sm p-4 resize-none focus:outline-none"
+                  className="w-full h-[250px] bg-transparent text-amber-200 font-mono text-sm p-4 resize-none focus:outline-none"
                   spellCheck={false}
                   placeholder="# 在此编写你的代码..."
                 />
