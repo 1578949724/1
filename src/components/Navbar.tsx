@@ -1,12 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, User, Code2 } from 'lucide-react';
+import { Home, Code2 } from 'lucide-react';
 
 export default function Navbar() {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: '我的课程', icon: User },
-    { path: '/about', label: '个人主页', icon: Home },
+    { path: '/', label: '我的课程', icon: Home },
     { path: '/pandas', label: 'Pandas训练项目', icon: Code2 },
   ];
 

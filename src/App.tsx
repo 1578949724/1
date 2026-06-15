@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Pandas from "@/pages/Pandas";
 import CourseDetail from "@/pages/CourseDetail";
@@ -13,7 +12,6 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<About />} />
-        <Route path="/about" element={<Home />} />
         <Route path="/pandas" element={<Pandas />} />
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
